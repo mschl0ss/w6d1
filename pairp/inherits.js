@@ -1,8 +1,11 @@
 Function.prototype.inherits = function (Child) {
 
-  function Surrogate () {}
-  Surrogate.prototype = this.prototype;
-  Child.prototype = new Surrogate();
+  // function Surrogate () {}
+  // Surrogate.prototype = this.prototype;
+  // Child.prototype = new Surrogate();
+  // Child.prototype.constructor = Child;
+
+  Child.prototype = Object.create(this.prototype);
   Child.prototype.constructor = Child;
 
 };
