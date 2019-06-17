@@ -82,6 +82,7 @@ Function.prototype.myCurry = function (numArgs) {
     if (numbers.length === numArgs) return that(...numbers);
     else return _curriedSum;
   };
+
 };
 
 //sumThree.myCurry(3)(4)(20)(6);
@@ -104,7 +105,7 @@ Function.prototype.applyCurry = function (numArgs) {
   let that = this;
 
   return function _curry (arg) {
-    // debugger;
+    debugger;
     args.push(arg);
     if (args.length === numArgs) return that.apply(that, args);
     else return _curry;
@@ -113,7 +114,7 @@ Function.prototype.applyCurry = function (numArgs) {
 
 function listFruits (...fruits) {
   console.log('there are actually other fruits on the planet besides bananas and mangoes');
-  console.log('eg')
+  console.log('eg');
   fruits.forEach( (arg,i) => {
     console.log(`${arg}`);
     if(i !== fruits.length-1) console.log('and');
